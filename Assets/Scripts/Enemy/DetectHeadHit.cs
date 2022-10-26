@@ -10,9 +10,14 @@ public class DetectHeadHit : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D other) {
         if (other.gameObject.CompareTag("Player")) {
-            GameManager.Instance.UpdatePoints(points);
-            Destroy(enemy);  
-            Instantiate(deathAnim, transform.position, transform.rotation);
+            Die();
         }
     }
+
+    private void Die() {
+        GameManager.Instance.UpdatePoints(points);
+        Destroy(enemy);  
+        Instantiate(deathAnim, transform.position, transform.rotation);
+    }
+
 }

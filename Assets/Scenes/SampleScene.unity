@@ -9161,6 +9161,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1148844958}
     m_Modifications:
+    - target: {fileID: 16457779, guid: e66b6d8b055b2844780327968c2422cb, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 16457779, guid: e66b6d8b055b2844780327968c2422cb, type: 3}
+      propertyPath: m_UsedByComposite
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5472698505938679573, guid: e66b6d8b055b2844780327968c2422cb, type: 3}
       propertyPath: m_Name
       value: frog
@@ -9209,7 +9217,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 16457778, guid: e66b6d8b055b2844780327968c2422cb, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: e66b6d8b055b2844780327968c2422cb, type: 3}
 --- !u!1001 &1669585338
 PrefabInstance:

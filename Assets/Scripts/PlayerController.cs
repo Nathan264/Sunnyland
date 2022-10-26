@@ -33,19 +33,24 @@ public class PlayerController : MonoBehaviour
     }
 
     private void OnCollisionEnter2D(Collision2D other) {
-        if (other.gameObject.CompareTag("Ground")) {
-            playerAnim.SetBool("Jumping", false);
-            isJumping = false;
-        }   
-
-        if (other.gameObject.CompareTag("Enemy")) {
-            Die();
-        }   
+        if (!GameManager.Instance.gameOver) {
+            if (other.gameObject.CompareTag("Ground")) {
+                playerAnim.SetBool("Jumping", false);
+                isJumping = false;
+            }   
+        }
+         
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
-        if (other.gameObject.CompareTag("EnemyHead")) {
-            Jump(1.5f);
+        if (!GameManager.Instance.gameOver) {
+            if (other.gameObject.CompareTag("Enemy")) {
+                Die();
+            }  
+
+            if (other.gameObject.CompareTag("EnemyHead")) {
+                Jump(1.5f);
+            }
         }
     }
 
@@ -82,7 +87,6 @@ public class PlayerController : MonoBehaviour
 
     private void Die() {
         playerAnim.SetBool("Alive", false);
-        playerRig.AddForce(new Vector2(0f, 2f), ForceMode2D.Impulse);
         GameManager.Instance.GameOver();
     }
 }
